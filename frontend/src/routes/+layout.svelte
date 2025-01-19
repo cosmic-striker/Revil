@@ -5,6 +5,7 @@
     let { children } = $props();
 </script>
 
+<BackgroundGrid />
 <div class="h-full">
     {@render children()}
 </div>
