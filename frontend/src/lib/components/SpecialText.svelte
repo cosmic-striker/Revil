@@ -8,11 +8,11 @@
 
     let { fore, back }: Props = $props();
 
-    let showFore = $state(true);
+    let onHover = $state(true);
 
     onMount(() => {
         const interval = setTimeout(() => {
-            showFore = !showFore;
+            onHover = !onHover;
         }, 500);
 
         return () => clearTimeout(interval);
@@ -20,17 +20,17 @@
 </script>
 
 {#if true}
-    <div class="relative">
-        <div class={`gradient-circle center-absolute fade-in`}></div>
+    <div class="group relative">
+        <div class={`gradient-circle center-absolute fade-in z-0`}></div>
         <h2
-            class={`text center-absolute max-tab:text-spl-ls tracking-[0.5rem] tab:text-spl-md tab:tracking-[1rem] lap:text-spl-lg z-10 fade-in
-            ${showFore ? "text-red" : "fore"}`}
+            class={`text center-absolute max-tab:text-spl-ls tracking-[0.5rem] tab:text-spl-md tab:tracking-[1rem] z-10 lap:text-spl-lg fade-in group-hover:text-red
+            ${onHover ? "text-red" : "fore"}`}
         >
             {fore}
         </h2>
-        {#if !showFore}
+        {#if !onHover}
             <h2
-                class={`text center-absolute max-tab:text-spl-ls tracking-[0.5rem] tab:text-spl-md tab:tracking-[1rem] lap:text-spl-lg text-red hover:fore fade-in`}
+                class={`text center-absolute max-tab:text-spl-ls tracking-[0.5rem] tab:text-spl-md tab:tracking-[1rem] lap:text-spl-lg text-red hover:fore fade-in group-hover:hidden`}
             >
                 {back}
             </h2>
