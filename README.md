@@ -2,7 +2,7 @@
 
 
 ## Backend
-[ ] Registration API
-[ ] Mailer Bot
-[ ] Database
-[ ] Payment API
+- [ ] Registration API
+- [ ] Mailer Bot
+- [ ] Database
+- [ ] Payment API
