@@ -1,0 +1,11 @@
+{
+  "name": "revil",
+  "module": "app.js",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
