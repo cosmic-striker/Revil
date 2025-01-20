@@ -1,0 +1,95 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span {
+    margin: 0;
+    padding: 0;
+    z-index: 1;
+}
+
+.block {
+    width: 30px;
+    height: 30px;
+    border: 0.5px solid #231A25;
+    transition: border-color 0.3s ease;
+}
+
+.highlight {
+    border-color: red;
+}
+
+@keyframes fadeInEffect {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@layer components {
+    @font-face {
+        font-family: 'Akira';
+        src: url('/akira-expanded.otf') format('opentype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    .fade-in {
+        opacity: 0;
+        animation: fadeInEffect 1s forwards;
+    }
+
+    .custom-container {
+        @apply mx-auto my-0 w-full h-screen p-5 tab:p-8 lap:p-12
+    }
+
+    .gap {
+        @apply gap-8 tab:gap-10 lap:gap-12
+    }
+
+    .text {
+        @apply text-light text-xs tab:text-base;
+        font-family: 'Akira', sans-serif;
+    }
+
+    .fore {
+        transition: all 0.5s ease;
+        color: transparent;
+        -webkit-text-stroke-width: 2.5px;
+        -webkit-text-stroke-color: #DE1A1A;
+        mix-blend-mode: difference;
+    }
+
+    .gradient-circle {
+        width: 200px;
+        height: 200px;
+        flex-shrink: 0;
+        border-radius: 300px;
+        background: #DE1A1A;
+        filter: blur(200px);
+    }
+
+    .center-absolute {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
